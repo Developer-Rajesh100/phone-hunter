@@ -9,9 +9,6 @@ h1 {
 .search-inpute {
   width: 60%;
 }
-.error-massage {
-  display: none;
-}
 .loading-gif {
   text-align: center;
   margin-top: -100px;
