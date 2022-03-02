@@ -1,5 +1,19 @@
 /* GOOGLE FONT  */
 @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
-.home-page-title {
+h1 {
   font-family: "League Gothic", sans-serif;
+}
+.title-color {
+  color: blueviolet;
+}
+.search-inpute {
+  width: 60%;
+}
+.error-massage {
+  display: none;
+}
+.loading-gif {
+  text-align: center;
+  margin-top: -100px;
+  display: none;
 }

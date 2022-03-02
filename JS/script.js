@@ -1,4 +1,6 @@
 const allMobiles = () => {
+  document.getElementById("product-zone").innerHTML = "";
+  document.getElementById("loading-gif").style.display = "block";
   const searchBox = document.getElementById("search-box").value;
   const mobileUrl = ` https://openapi.programming-hero.com/api/phones?search=${searchBox}`;
 
@@ -6,6 +8,7 @@ const allMobiles = () => {
   fetch(mobileUrl)
     .then((response) => response.json())
     .then((data) => displayMobiles(data.data));
+  document.getElementById("loading-gif").style.display = "none";
 };
 
 const displayMobiles = (mobiles) => {
@@ -38,8 +41,8 @@ const seeMore = (info) => {
 
 const setDetails = (info) => {
   document.getElementById("mobile-fetchers").innerHTML = `
-  <div class="col-4"></div>
-  <div class="col-6">
+  <div class="col-0 col-sm-4"></div>
+  <div class="col-12 col-sm-6">
   <div>
       <img src="${info.image}" alt="">
       <h1 class="text-info">Product Details</h1>
@@ -53,4 +56,8 @@ const setDetails = (info) => {
       <p>Storage : ${info.mainFeatures.storage}</p>
   </div>
 </div>`;
+
+  if (info.mainFeatures.status == true) {
+    document.getElementById("error-massage").style.display = "block";
+  }
 };
