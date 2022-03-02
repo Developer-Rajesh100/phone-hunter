@@ -1,23 +1,19 @@
 const spinner = (displayStyle) => {
   document.getElementById("loading-gifs").style.display = displayStyle;
 };
-
 const allMobiles = () => {
   document.getElementById("product-zone").innerHTML = "";
-  // spinner("block");
-
   const searchBox = document.getElementById("search-box").value;
+  searchBox.value = " ";
   spinner("block");
   const mobileUrl = ` https://openapi.programming-hero.com/api/phones?search=${searchBox}`;
   console.log(mobileUrl);
   fetch(mobileUrl)
     .then((response) => response.json())
     .then((data) => displayMobiles(data.data));
-  // document.getElementById("loading-gif").style.display = "none";
 };
 const displayMobiles = (mobiles) => {
   const first20Data = mobiles.slice(0, 20);
-
   if (mobiles.length == "") {
     Swal.fire({
       title:
