@@ -9,7 +9,8 @@ const allMobiles = () => {
 };
 
 const displayMobiles = (mobiles) => {
-  for (const mobile of mobiles) {
+  const first20Data = mobiles.slice(0, 20);
+  for (const mobile of first20Data) {
     const productZone = document.getElementById("product-zone");
     const div = document.createElement("div");
     div.innerHTML = ` <div class="col">
